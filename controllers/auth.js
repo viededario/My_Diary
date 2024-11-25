@@ -4,6 +4,10 @@ const bcrypt = require('bcrypt');
 
 const User = require('../models/user.js');
 
+router.get('/', (req, res) => {
+   res.render('index.ejs')
+})
+
 router.get('/sign-up', (req, res) => {
   res.render('auth/sign-up.ejs');
 });
@@ -28,11 +32,9 @@ router.post('/sign-up', async (req, res) => {
       return res.send('Password and Confirm Password do not match');
     }
   
-    // Must hash the password before sending to the database
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
     req.body.password = hashedPassword;
   
-    // All ready to create the new user!
     await User.create(req.body);
   
     res.redirect('/auth/sign-in');
@@ -44,7 +46,6 @@ router.post('/sign-up', async (req, res) => {
 
 router.post('/sign-in', async (req, res) => {
   try {
-    // First, get the user from the database
     const userInDatabase = await User.findOne({ username: req.body.username });
     if (!userInDatabase) {
       return res.send('Login failed. Please try again.');

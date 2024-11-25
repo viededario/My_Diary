@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
-  <link rel="stylesheet" href="CSS/home.css">
+  <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <%- include('../partials/navbar.ejs') %>
   <% if (user) { %>
-    <h1>Welcome To Your Diaries, <%= user.username %>!</h1>
-    <p>
-    </p>
+    <%- include('../partials/navbar.ejs') %>
+    <div id="Welcome">
+    <h1 >Welcome To Your Diaries, <%= user.username %>!</h1>
   <% } else { %>
-    <h1>Welcome to Your Diaries</h1>
+    <h1 class="Welcome">Welcome to Your Journals </h1> 
+    <h3 class="access">sign up or sign in to your account</h3>
+    <a href="/auth/sign-up">Sign Up</a>
+    <a href="/auth/sign-in">Sign In</a>
+  </div>
   <% } %>
 </body>
 </html>

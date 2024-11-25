@@ -7,6 +7,9 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
 
+
+const userView = require('./middleware/user-view.js');
+const signedIn = require('./middleware/signed-in.js');
 const authController = require('./controllers/auth.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
@@ -19,6 +22,8 @@ mongoose.connection.on('connected', () => {
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(morgan('dev'));
+app.use(express.static('public'));
 
 
 app.use(
@@ -36,8 +41,10 @@ app.get('/', (req, res) => {
 });
 
 
-
+app.use(userView)
 app.use('/auth', authController);
+app.use(signedIn)
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port http://localhost:${port}`);
