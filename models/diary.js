@@ -13,6 +13,11 @@ const diarySchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  user: { // Reference to the User model
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
 });
 
 const Diary = mongoose.model( 'Diary', diarySchema);

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Title: <%= diary.title %></h1>
+    <h3>Journal: <%= diary.journal %></h3>
+    <h4>Created On: <%= diary.createdOn %></h4>
+
+    <form action="/diaries/<%=diary.id%>/edit" method="GET">
+        <button type="submit">Edit Diary</button>
+    </form>
+
+    <form action="/diaries/<%=diary.id%>/?_method=DELETE" method="POST" >
+        <button type="submit">Delete Diary</button>
+    </form>
+    
+</body>
+</html>

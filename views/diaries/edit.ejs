@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Edit <%=diary.title%></h1>
+    <form action="/diaries/<%=diary._id%>/?_method=PUT" method="POST">
+        <label for="title">Title:</label>
+    <input id="title" type="text" name="title" placeholder="<%= diary.title%>"/>
+
+    <label for="journal">Journal:</label>
+    <textarea name="journal" id="journal" placeholder="<%=diary.journal%>"></textarea>
+
+    <button type="submit">Update Journal</button>
+    </form>
+</body>
+</html>

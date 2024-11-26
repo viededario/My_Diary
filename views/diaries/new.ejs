@@ -6,10 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h2>Create a new Journal</h2>
     <form action="/diaries" method="POST">
     <label for="title">Title:</label>
-    <input id="title" type="text" name="name"/>
+    <input id="title" type="text" name="title"/>
 
     <label for="journal">Journal:</label>
     <textarea name="journal" id="journal"></textarea>
