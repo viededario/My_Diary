@@ -3,18 +3,18 @@ const mongoose = require('mongoose');
 const diarySchema = mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    // required: true,
   },
   journal: {
     type: String,
-    required: true,
+    // required: true,
   },
-  createdAt: {
+  createdOn: {
     type: Date,
     default: Date.now,
   },
 });
 
-const Diary = mongoose.model( Diary, diarySchema);
+const Diary = mongoose.model( 'Diary', diarySchema);
 
 module.exports = Diary;

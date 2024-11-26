@@ -8,9 +8,9 @@
 </head>
 <body>
   <% if (user) { %>
-    <%- include('../partials/navbar.ejs') %>
     <div id="Welcome">
-    <h1 >Welcome To Your Diaries, <%= user.username %>!</h1>
+    <h1 >Welcome To Your Journals, <%= user.username %>!</h1>
+    <%- include('../partials/navbar.ejs') %>
   <% } else { %>
     <h1 class="Welcome">Welcome to Your Journals </h1> 
     <h3 class="access">sign up or sign in to your account</h3>

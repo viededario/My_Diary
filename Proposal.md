@@ -2,12 +2,11 @@
 
 My Diary is a web application that allows users to log their daily activities. They can add events on what unfolded during theid day and can go back and review those memories whenever they wish. The user will be able to create, read, update and delete any of the diaries they've created.
 
-![alt text](<Screenshot 2024-11-22 at 2.07.32 PM-1.jpeg>)
-![alt text](IMG_1234.jpg)
-![alt text](IMG_1235.jpg)
+![](public/intro.jpeg)
+![alt text](public/IMG_1234.jpg)
+![alt text](public/IMG_1235.jpg)
 
 
-![alt text](image.png)
 
 ### MVP
 AAU I should be able to sign up and sign in to a secure web app to create diaries.
