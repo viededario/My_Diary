@@ -4,18 +4,27 @@ const router = express.Router();
 const User = require('../models/user');
 const Diary = require('../models/diary.js')
 
-router.get('/', async (req, res) =>{
-    const allDiaries = await Diary.find({});
+const requireAuth = (req, res, next) => {
+    if (!req.session.user) {
+        return res.redirect('/auth');
+    }
+    next();
+};
+
+
+
+router.get('/', requireAuth, async (req, res) =>{
+    const allDiaries = await Diary.find({user: req.session.user._id});
     res.render('../views/diaries/index.ejs', { diaries: allDiaries});
 });
 
 
 
-router.get('/new', (req, res) => {
+router.get('/new', requireAuth, (req, res) => {
     res.render('../views/diaries/new.ejs')
 })
 
-router.post('/', async (req, res) => {
+router.post('/', requireAuth, async (req, res) => {
     const diaryData = {
         ...req.body,
         user: req.session.user._id,
@@ -30,7 +39,7 @@ res.redirect('/diaries')
 });
 
 
-router.get('/:diaryId', async (req, res) => {
+router.get('/:diaryId', requireAuth, async (req, res) => {
     try {
       const diary = await Diary.findOne({ 
         _id: req.params.diaryId, 
@@ -48,7 +57,7 @@ router.get('/:diaryId', async (req, res) => {
     }
   });
 
-  router.get('/:diaryId/edit', async (req, res) => {
+  router.get('/:diaryId/edit', requireAuth, async (req, res) => {
     try {
         const diary = await Diary.findOne({
             _id: req.params.diaryId, 
@@ -67,7 +76,7 @@ router.get('/:diaryId', async (req, res) => {
 });
 
 
-router.put('/:diaryId', async (req, res) => { 
+router.put('/:diaryId', requireAuth, async (req, res) => { 
     try {
         const diary = await Diary.findOne({
             _id: req.params.diaryId,
@@ -88,7 +97,7 @@ router.put('/:diaryId', async (req, res) => {
 });
 
 
-router.delete('/:diaryId', async (req, res) => {  
+router.delete('/:diaryId', requireAuth, async (req, res) => {  
     try {
         
         const diary = await Diary.findOne({
