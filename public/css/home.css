@@ -1,40 +1,77 @@
 
-html {
+/* html {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
 body {
 background-color: rgb(232, 232, 219);
+color: black;
+background-image: url(https://img.freepik.com/free-photo/notebook-paper-reminder-yellow-background-top-view_169016-39196.jpg?t=st=1732925889~exp=1732929489~hmac=70b4e2c9977727eb19537a6920c6954a00105b6a1520430fcd21c78b118b0f21&w=1800);
+font-family: "Parkinsans", sans-serif;
 }
 
-h1.welcome {
+.homeBody {
+    background-image: url(https://img.freepik.com/free-photo/notebook-paper-reminder-yellow-background-top-view_169016-39196.jpg?t=st=1732925889~exp=1732929489~hmac=70b4e2c9977727eb19537a6920c6954a00105b6a1520430fcd21c78b118b0f21&w=1800);
+}
+
+h1 {
 display: flex;
 align-items: center;
-justify-content:  center;
+justify-content:  flex-start;
+margin-top:300px;
 }
+
+
 div {
     height: 100%;
 }
 
-h1 {
+/* h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 
 h3 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
+
+.up, .in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 80px 0 0;
+    height: 100%;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 0;
+    border-radius: 25px;
+    width: 10em;
+    text-align: center;
+    background-color: beige;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.up {
+    margin-bottom: 20px
+}
+
 
 a {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: black;
+    margin-right: 50px;
 }

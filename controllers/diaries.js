@@ -53,7 +53,7 @@ router.get('/:diaryId', requireAuth, async (req, res) => {
       res.render('diaries/show.ejs', { diary });
     } catch (error) {
       console.error(error);
-      res.status(500).send('There was an error retrieving the diary');
+      res.status(500).send('There was an error displaying the journal');
     }
   });
 
@@ -71,7 +71,7 @@ router.get('/:diaryId', requireAuth, async (req, res) => {
         res.render('diaries/edit.ejs', { diary }); 
     } catch (error) {
         console.error(error);
-        res.status(500).send("Error retrieving the diary for editing");
+        res.status(500).send("Error retrieving the journal for editing");
     }
 });
 
