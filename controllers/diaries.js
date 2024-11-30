@@ -12,11 +12,15 @@ const requireAuth = (req, res, next) => {
 };
 
 
-
-router.get('/', requireAuth, async (req, res) =>{
-    const allDiaries = await Diary.find({user: req.session.user._id});
-    res.render('../views/diaries/index.ejs', { diaries: allDiaries});
-});
+router.get('/', requireAuth, async (req, res) => {
+    try {
+      const userWithDiaries = await User.findById(req.session.user._id).populate('diaries'); 
+      res.render('../views/diaries/index.ejs', { diaries: userWithDiaries.diaries }); 
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error fetching diaries');
+    }
+  });
 
 
 
@@ -25,17 +29,25 @@ router.get('/new', requireAuth, (req, res) => {
 })
 
 router.post('/', requireAuth, async (req, res) => {
-    const diaryData = {
-        ...req.body,
-        user: req.session.user._id,
-    };
-console.log(diaryData);
+  const diaryData = {
+    ...req.body,
+    user: req.session.user._id, 
+  };
 
-const diary = new Diary(diaryData);
-await diary.save();
+  try {
+    const diary = new Diary(diaryData); 
+    await diary.save(); 
 
-res.redirect('/diaries')
+    
+    await User.findByIdAndUpdate(req.session.user._id, {
+      $push: { diaries: diary._id }, 
+    });
 
+    res.redirect('/diaries'); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error creating diary');
+  }
 });
 
 

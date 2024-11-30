@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/edit.css">
+    <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-
-    <h1>Edit <%=diary.title%></h1>
+<div>
+    <h1 class="edit">Edit: <%=diary.title%></h1>
+</div> 
     <form action="/diaries/<%=diary._id%>/?_method=PUT" method="POST">
-        <label for="title">Title:</label>
+<div>
+    <label for="title">Title:</label>
     <input id="title" type="text" name="title" placeholder="<%= diary.title%>"/>
+</div>
 
+<div>
     <label for="journal">Journal:</label>
     <textarea name="journal" id="journal" placeholder="<%=diary.journal%>"></textarea>
+</div>
 
+<div>
     <button type="submit">Update Journal</button>
+</div>
     </form>
 </body>
 </html>

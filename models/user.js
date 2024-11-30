@@ -9,6 +9,12 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  diaries: [ 
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Diary',
+    },
+  ],
 });
 
 const User = mongoose.model('User', userSchema);

@@ -12,19 +12,19 @@
 body {
 background-color: rgb(232, 232, 219);
 color: black;
-background-image: url(https://img.freepik.com/free-photo/notebook-paper-reminder-yellow-background-top-view_169016-39196.jpg?t=st=1732925889~exp=1732929489~hmac=70b4e2c9977727eb19537a6920c6954a00105b6a1520430fcd21c78b118b0f21&w=1800);
+background-image: url(https://img.freepik.com/free-photo/arrangement-with-stationery-elements-notepad_23-2148851554.jpg?t=st=1732998086~exp=1733001686~hmac=73a4355959f876502ab141288c60083dabc59b77d54baf880943bd4d9c350e78&w=1800);
 font-family: "Parkinsans", sans-serif;
 }
 
 .homeBody {
-    background-image: url(https://img.freepik.com/free-photo/notebook-paper-reminder-yellow-background-top-view_169016-39196.jpg?t=st=1732925889~exp=1732929489~hmac=70b4e2c9977727eb19537a6920c6954a00105b6a1520430fcd21c78b118b0f21&w=1800);
+    background-image: url(https://img.freepik.com/free-photo/desk-office-with-objects_23-2147982264.jpg?t=st=1732997264~exp=1733000864~hmac=7854c34b9ca1b7679177ef9e186c45983bd42c38fa44f9c31296ddc4d29f1337&w=1800);
 }
 
 h1 {
 display: flex;
 align-items: center;
 justify-content:  flex-start;
-margin-top:300px;
+margin-top:460px;
 }
 
 
@@ -74,4 +74,9 @@ a {
     text-decoration: none;
     color: black;
     margin-right: 50px;
+}
+
+nav {
+    margin-right: 200px;
+    font-weight: bold; 
 }

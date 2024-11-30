@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0; 
+    font-family: "Parkinsans", sans-serif; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    background-color: rgb(252, 252, 249);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    padding-top: 60px; 
+    box-sizing: border-box; 
+    background-image: url(https://img.freepik.com/free-photo/top-view-notepad-pencil-grey-space_140725-76349.jpg?t=st=1732997438~exp=1733001038~hmac=489b6da04bd2456a7858bb9521f3993c61ac6451e6cc9f424ef270d2078c2d21&w=1800) ;
+}
+
+
+nav {
+    position: fixed; 
+    top: 0;
+    width: 50%; 
+    color: rgb(253, 250, 250);
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: space-evenly; 
+    align-items: center; 
+    z-index: 1000; 
+    font-weight: bold; 
+}
+
+h3.yourJournals {
+    font-size: 1.8rem; 
+    color: #080606; 
+    margin-top: 200px;
+    margin-bottom: 20px; 
+    text-align: center; 
+    padding: 10px 20px; 
+    text-decoration: none;
+    padding: 10px 15px; 
+    font-size: 4rem; 
+    display: inline-block;
+    margin-right: 150px;
+}
+
+
+ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0 0 20px 0; 
+    width: 100%; 
+    text-align: center; 
+    font-weight: bold; 
+
+}
+
+li {
+    margin-bottom: 10px; 
+    margin-right: 150px;
+
+
+
+    
+}
+
+a {
+    text-decoration: none; 
+    color: rgb(4, 3, 3);
+    padding: 10px 15px; 
+    font-size: 1rem; 
+    display: inline-block; 
+}
+
+
+
+
+.addBtn {
+    display: block; 
+    margin-top: 20px; 
+    text-align: center; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    color: #090808; 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    background-color: rgb(100, 103, 108); 
+    margin-right: 150px;
+
+}
+
+.addBtn:hover {
+    background-color: rgb(148, 152, 158);
+}

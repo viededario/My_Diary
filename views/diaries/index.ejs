@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <%- include('../partials/_navbar.ejs') %>
+
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h3>Your Journals</h3>
+    <h3 class="yourJournals">Your Journals</h3>
     <ul>
         <% diaries.forEach((diary) => {
             %>
@@ -18,6 +19,6 @@
        <% }) %>
     </ul>
 
-    <a href="/diaries/new">Add New Journal</a>
+    <a href="/diaries/new" class="addBtn">Add New Journal</a>
 </body>
 </html>
