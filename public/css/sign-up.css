@@ -2,12 +2,12 @@
 
 html, body {
     height: 100%;
-    margin: 0; 
+    margin: 0;
     font-family: "Parkinsans", sans-serif;
 }
 
 body {
-    display: flex;
+    display: flex; 
     flex-direction: column; 
     align-items: center;
     justify-content: center;
@@ -17,33 +17,38 @@ body {
     background-repeat: no-repeat;
 }
 
+h1 {
+    margin-bottom: 20px; 
+    font-size: 1.8rem; 
+    color: #333; 
+    text-align: center; 
+}
+
 form {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     padding: 20px; 
+    background-color: rgba(117, 111, 111, 0.9); 
     border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
-.sign-in {
-    margin: 100px auto; 
-    padding: 10px; 
-    border-radius: 10px; 
-    background-color: rgba(117, 111, 111, 0.9);
-}
-
-.username, .password {
-    width: 100%; 
+form div {
     margin-bottom: 20px; 
+}
+
+input {
+    width: 100%; 
     padding: 10px; 
-    border: 1px solid #ccc;
-    border-radius: 5px; 
     font-size: 1rem; 
-    box-sizing: border-box;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
 }
 
 button {
-    width: 100%;
+    width: 100%; 
     padding: 10px; 
     font-size: 1rem; 
     border: none; 
@@ -51,7 +56,7 @@ button {
     background-color: rgb(100, 103, 108); 
     color: white; 
     cursor: pointer; 
-    font-weight: bold;
+    font-weight: bold; 
 }
 
 button:hover {
