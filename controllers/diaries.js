@@ -21,6 +21,7 @@ router.get("/", requireAuth, async (req, res) => {
     const userWithDiaries = await User.findById(req.session.user._id).populate(
       "diaries"
     );
+    console.log('userWithDiaries: ', userWithDiaries)
     res.render("../views/diaries/index.ejs", {
       diaries: userWithDiaries.diaries,
     });

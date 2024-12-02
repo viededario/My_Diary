@@ -86,3 +86,7 @@ nav {
   margin-right: 200px;
   font-weight: bold;
 }
+
+nav:hover {
+  color: rgb(134, 14, 247);
+}
