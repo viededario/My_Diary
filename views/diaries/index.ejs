@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/index.css" />
     <%- include('../partials/_navbar.ejs') %>
-
-</head>
-<body>
+  </head>
+  <body>
     <h3 class="yourJournals">Your Journals</h3>
     <ul>
-        <% diaries.forEach((diary) => {
-            %>
-            <li>
-                <a href="/diaries/<%=diary._id%>"> <%=diary.title%></a>
-            </li>
-       <% }) %>
+      <% diaries.forEach((diary) => { %>
+      <li>
+        <a href="/diaries/<%=diary._id%>"> <%=diary.title%></a>
+      </li>
+      <% }) %>
     </ul>
 
     <a href="/diaries/new" class="addBtn">Add New Journal</a>
-</body>
+  </body>
 </html>

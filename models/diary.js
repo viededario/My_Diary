@@ -1,30 +1,26 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const diarySchema = mongoose.Schema({
   title: {
     type: String,
-    // required: true,
+    required: true,
   },
   journal: {
     type: String,
-    // required: true,
+    required: true,
   },
   createdOn: {
     type: Date,
-    default: Date.now,
+    default: Date,
   },
-  password: {
-    string: String,
-    // required: true,
 
-  },
-  user: { 
+  user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
   },
 });
 
-const Diary = mongoose.model( 'Diary', diarySchema);
+const Diary = mongoose.model("Diary", diarySchema);
 
 module.exports = Diary;

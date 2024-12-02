@@ -1,74 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
 
-html, body {
-    height: 100%;
-    margin: 0; 
-    font-family: "Parkinsans", sans-serif;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Parkinsans", sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(212, 212, 202);
-    background-image: url(../img/sign-in.jpg);
-    background-size: cover; 
-    background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(212, 212, 202);
+  background-image: url(../img/sign-in.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 nav {
-    position: fixed; 
-    top: 0;
-    width: 50%; 
-    color: rgb(9, 6, 6);
-    padding: 10px 20px; 
-    display: flex; 
-    justify-content: space-evenly; 
-    align-items: center; 
-    z-index: 1000; 
-    font-weight: bold; 
+  position: fixed;
+  top: 0;
+  width: 50%;
+  color: rgb(9, 6, 6);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1000;
+  font-weight: bold;
 }
 h1 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 form {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    padding: 20px; 
-    border-radius: 10px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .sign-in {
-    margin: 100px auto; 
-    padding: 10px; 
-    border-radius: 10px; 
-    background-color: rgba(117, 111, 111, 0.9);
+  margin: 100px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(117, 111, 111, 0.9);
 }
 
-.username, .password {
-    width: 100%; 
-    margin-bottom: 20px; 
-    padding: 10px; 
-    border: 1px solid #ccc;
-    border-radius: 5px; 
-    font-size: 1rem; 
-    box-sizing: border-box;
+.username,
+.password {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 button {
-    width: 100%;
-    padding: 10px; 
-    font-size: 1rem; 
-    border: none; 
-    border-radius: 5px; 
-    background-color: rgb(100, 103, 108); 
-    color: white; 
-    cursor: pointer; 
-    font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(100, 103, 108);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 button:hover {
-    background-color: rgb(148, 152, 158); 
+  background-color: rgb(148, 152, 158);
 }

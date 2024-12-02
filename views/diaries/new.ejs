@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/new.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/new.css" />
+  </head>
+  <body>
     <%- include('../partials/_navbar.ejs') %>
     <h2>Create a Journal</h2>
     <form action="/diaries" method="POST">
-    <div>
+      <div>
         <label for="title">Title:</label>
-        <input id="title" type="text" name="title"/>
-    </div>
+        <input id="title" type="text" name="title" />
+      </div>
 
-    <div>
+      <div>
         <label for="journal">Journal:</label>
         <textarea name="journal" id="journal"></textarea>
-    </div>
+      </div>
 
-    <div>
+      <div>
         <label for="createdOn">Created On:</label>
-        <input type="date" id="createdOn" name="createdOn" value="<%= new Date().toISOString().split('T')[0] %>" />
-    </div>
+        <input
+          type="text"
+          id="createdOn"
+          name="createdOn"
+          value="<%= moment(createdOn).format('MMMM Do YYYY, h:mm:ss a') %>"
+          readonly
+        />
+      </div>
 
-    <div>
+      <div>
         <button type="submit">Create Journal</button>
-    </div>
+      </div>
     </form>
-</body>
+  </body>
 </html>

@@ -8,10 +8,11 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-
+<div class="journal-container">
     <h1>Title: <%= diary.title %></h1>
-    <h3>Journal: <%= diary.journal %></h3>
+    <h3><%= diary.journal %></h3>
     <h4>Created On: <%= diary.createdOn %></h4>
+</div>
 
 <div>
     <form action="/diaries/<%=diary.id%>/edit" method="GET" class="edit">

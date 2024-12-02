@@ -1,33 +1,30 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
-const express = require('express');
+const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
-const methodOverride = require('method-override');
-const morgan = require('morgan');
-const session = require('express-session');
+const mongoose = require("mongoose");
+const methodOverride = require("method-override");
+const morgan = require("morgan");
+const session = require("express-session");
 const router = express.Router();
 
+const signedIn = require("./middleware/signed-in.js");
+const userView = require("./middleware/user-view.js");
+const authController = require("./controllers/auth.js");
+const diariesController = require("./controllers/diaries.js");
 
-
-const signedIn = require('./middleware/signed-in.js');
-const userView = require('./middleware/user-view.js');
-const authController = require('./controllers/auth.js');
-const diariesController = require('./controllers/diaries.js');
-
-const port = process.env.PORT ? process.env.PORT : '3000';
+const port = process.env.PORT ? process.env.PORT : "3000";
 
 mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connection.on('connected', () => {
+mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
-app.use(morgan('dev'));
-app.use(express.static('public'));
-
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
+app.use(express.static("public"));
 
 app.use(
   session({
@@ -37,14 +34,13 @@ app.use(
   })
 );
 
+app.use(userView);
+app.use("/auth", authController);
+app.use(signedIn);
+app.use("/diaries", diariesController);
 
-app.use(userView)
-app.use('/auth', authController);
-app.use(signedIn)
-app.use('/diaries', diariesController);
-
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
+app.get("/", (req, res) => {
+  res.render("index.ejs", {
     user: req.session.user,
   });
 });
