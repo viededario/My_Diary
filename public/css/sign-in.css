@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: rgb(212, 212, 202);
-    background-image: url(https://img.freepik.com/free-photo/spiral-notepad-white-table-paper_1203-6086.jpg?t=st=1732974797~exp=1732978397~hmac=1e57b9c6354d7e523e49eb6135e496395b0bf769b82087650ff471fe978b45c3&w=1800);
+    background-image: url(../img/sign-in.jpg);
     background-size: cover; 
     background-repeat: no-repeat;
 }
