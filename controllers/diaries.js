@@ -21,7 +21,7 @@ router.get("/", requireAuth, async (req, res) => {
     const userWithDiaries = await User.findById(req.session.user._id).populate(
       "diaries"
     );
-    console.log('userWithDiaries: ', userWithDiaries)
+   
     res.render("../views/diaries/index.ejs", {
       diaries: userWithDiaries.diaries,
     });
@@ -70,7 +70,7 @@ router.get("/:diaryId", requireAuth, async (req, res) => {
     }
 
     res.render("diaries/show.ejs", { diary });
-    console.log(diary);
+   
   } catch (error) {
     console.error(error);
     res.status(500).send("There was an error displaying the journal");
