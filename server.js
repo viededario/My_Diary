@@ -49,11 +49,6 @@ app.use(signedIn);
 app.use("/diaries", diariesController);
 
 app.get("/", requireAuth, async (req, res) => {
-  // console.log('req.session.user: ', req.session.user); // Check the session data to ensure user is valid
-
-  // res.render("../views/diaries/home.ejs", {
-  //   user: req.session.user,
-  // });
   try {
     const userWithDiaries = await User.findById(req.session.user._id).populate(
       "diaries"
